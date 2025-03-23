@@ -16,7 +16,6 @@ class FollowingManager {
 
     private func saveFollowingList(_ followingList: [Int]) {
         UserDefaults.standard.set(followingList, forKey: followingKey)
-        UserDefaults.standard.synchronize()
     }
 
     func isFollowing(userId: Int) -> Bool {
