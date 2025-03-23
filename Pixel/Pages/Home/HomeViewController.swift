@@ -130,7 +130,7 @@ extension HomeViewController: UITableViewDataSource {
         cell.configure(user: user, isFollowing: viewModel.isFollowing(userId: user.accountID))
         cell.followTapped = { [weak self] in
             self?.viewModel.toggleFollowingState(userId: user.accountID)
-            self?.tableView.reloadData()
+            self?.tableView.reloadRows(at: [indexPath], with: .none)
         }
         return cell
     }
