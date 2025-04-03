@@ -7,11 +7,16 @@
 
 import Foundation
 
-struct NetworkManager {
-    static let baseURL = "https://api.stackexchange.com/2.2/"
+protocol NetworkAbstraction {
+    var baseUrl: String { get  }
+    func fetchData<T: Decodable>(endpoint: String, queryItems: [String: String]) async throws -> T
+}
 
-    static func fetchData<T: Decodable>(endpoint: String, queryItems: [String: String] = [:]) async throws -> T {
-        guard var urlComponents = URLComponents(string: baseURL + endpoint) else {
+struct NetworkManager: NetworkAbstraction {
+    var baseUrl: String = "https://api.stackexchange.com/2.2/"
+
+    func fetchData<T: Decodable>(endpoint: String, queryItems: [String: String] = [:]) async throws -> T {
+        guard var urlComponents = URLComponents(string: baseUrl + endpoint) else {
             throw URLError(.badURL)
         }
         

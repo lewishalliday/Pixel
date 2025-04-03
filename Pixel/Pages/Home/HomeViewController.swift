@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = .clear
-        table.allowsSelection = false
+        table.allowsSelection = true
         table.delegate = self
         table.dataSource = self
         table.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
@@ -139,5 +139,8 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: - TableView Delegate
 
 extension HomeViewController: UITableViewDelegate {
-    func tableView(_: UITableView, didSelectRowAt _: IndexPath) { }
+    func tableView(_ tableView: UITableView, didSelectRowAt index: IndexPath) {
+        tableView.deselectRow(at: index, animated: true)
+        viewModel.presentUserDetail(for: index)
+    }
 }

@@ -10,31 +10,39 @@ import Foundation
 
 class HomeViewModel {
     private let followingManager = FollowingManager()
+    
+    let coordinator: Coordinator
+    let networkManager: NetworkAbstraction
 
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var users: [User] = []
 
-    init() {
-        loadUsersData()
+    init(coordinator: Coordinator, networkManager: NetworkAbstraction) {
+        self.coordinator = coordinator
+        self.networkManager = networkManager
+        
+        Task {
+            do {
+                try await loadUsersData()
+            } catch { }
+        }
     }
 
     // MARK: - Networking
-    private func loadUsersData() {
+    func loadUsersData() async throws {
         isLoading = true
-        Task {
-            defer { isLoading = false }
-            do {
-                let userResponse: UserData = try await NetworkManager.fetchData(endpoint: "users", queryItems: [
-                    "page": "1",
-                    "pagesize": "20",
-                    "order": "desc",
-                    "sort": "reputation",
-                    "site": "stackoverflow",
-                ])
-                self.users = userResponse.user
-            } catch {
-                print("Error: \(error)")
-            }
+        defer { isLoading = false }
+        do {
+            let userResponse: UserData = try await networkManager.fetchData(endpoint: "users", queryItems: [
+                "page": "1",
+                "pagesize": "20",
+                "order": "desc",
+                "sort": "reputation",
+                "site": "stackoverflow",
+            ])
+            self.users = userResponse.user
+        } catch {
+            print("Error: \(error)")
         }
     }
 
@@ -48,5 +56,10 @@ class HomeViewModel {
         } else {
             followingManager.follow(userId: userId)
         }
+    }
+    
+    func presentUserDetail(for indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        coordinator.presetUserDetailModal(user: user)
     }
 }

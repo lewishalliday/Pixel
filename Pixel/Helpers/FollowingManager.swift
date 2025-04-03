@@ -29,6 +29,7 @@ class FollowingManager {
         if !followingList.contains(userId) {
             followingList.append(userId)
             saveFollowingList(followingList)
+            print(followingList)
         } else {
             print("User \(userId) is already followed.")
         }
@@ -40,6 +41,7 @@ class FollowingManager {
         if let index = followingList.firstIndex(of: userId) {
             followingList.remove(at: index)
             saveFollowingList(followingList)
+            print(followingList)
         } else {
             print("User \(userId) is not being followed.")
         }

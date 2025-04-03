@@ -23,7 +23,19 @@
 		2738FF422D904E47000F7A22 /* ReputationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738FF412D904E47000F7A22 /* ReputationView.swift */; };
 		2738FF442D904E95000F7A22 /* FollowingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738FF432D904E95000F7A22 /* FollowingManager.swift */; };
 		2738FF472D904EF5000F7A22 /* UIImage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738FF462D904EF2000F7A22 /* UIImage+Cache.swift */; };
+		27BE845D2D9D6E1500BF4564 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE845C2D9D6E1500BF4564 /* UserDetailViewController.swift */; };
+		27BE845F2D9D6E1C00BF4564 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE845E2D9D6E1900BF4564 /* UserDetailViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27BE84682D9D75BE00BF4564 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2738FEFA2D90346B000F7A22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2738FF012D90346B000F7A22;
+			remoteInfo = Pixel;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2738FF022D90346B000F7A22 /* Pixel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pixel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,10 +56,28 @@
 		2738FF412D904E47000F7A22 /* ReputationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReputationView.swift; sourceTree = "<group>"; };
 		2738FF432D904E95000F7A22 /* FollowingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingManager.swift; sourceTree = "<group>"; };
 		2738FF462D904EF2000F7A22 /* UIImage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Cache.swift"; sourceTree = "<group>"; };
+		27BE845C2D9D6E1500BF4564 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		27BE845E2D9D6E1900BF4564 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		27BE84642D9D75BE00BF4564 /* PixelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PixelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		27BE84652D9D75BE00BF4564 /* PixelTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PixelTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2738FEFF2D90346B000F7A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BE84612D9D75BE00BF4564 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				2738FF202D90348F000F7A22 /* Pixel */,
+				27BE84652D9D75BE00BF4564 /* PixelTests */,
 				2738FF032D90346B000F7A22 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2738FF022D90346B000F7A22 /* Pixel.app */,
+				27BE84642D9D75BE00BF4564 /* PixelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,6 +143,7 @@
 		2738FF282D9034E0000F7A22 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				27BE845B2D9D6E0600BF4564 /* User Details */,
 				2738FF292D90350F000F7A22 /* Home */,
 			);
 			path = Pages;
@@ -177,6 +210,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		27BE845B2D9D6E0600BF4564 /* User Details */ = {
+			isa = PBXGroup;
+			children = (
+				27BE845E2D9D6E1900BF4564 /* UserDetailViewModel.swift */,
+				27BE845C2D9D6E1500BF4564 /* UserDetailViewController.swift */,
+			);
+			path = "User Details";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +241,29 @@
 			productReference = 2738FF022D90346B000F7A22 /* Pixel.app */;
 			productType = "com.apple.product-type.application";
 		};
+		27BE84632D9D75BE00BF4564 /* PixelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BE846A2D9D75BE00BF4564 /* Build configuration list for PBXNativeTarget "PixelTests" */;
+			buildPhases = (
+				27BE84602D9D75BE00BF4564 /* Sources */,
+				27BE84612D9D75BE00BF4564 /* Frameworks */,
+				27BE84622D9D75BE00BF4564 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27BE84692D9D75BE00BF4564 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				27BE84652D9D75BE00BF4564 /* PixelTests */,
+			);
+			name = PixelTests;
+			packageProductDependencies = (
+			);
+			productName = PixelTests;
+			productReference = 27BE84642D9D75BE00BF4564 /* PixelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -211,6 +276,10 @@
 				TargetAttributes = {
 					2738FF012D90346B000F7A22 = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					27BE84632D9D75BE00BF4564 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 2738FF012D90346B000F7A22;
 					};
 				};
 			};
@@ -229,6 +298,7 @@
 			projectRoot = "";
 			targets = (
 				2738FF012D90346B000F7A22 /* Pixel */,
+				27BE84632D9D75BE00BF4564 /* PixelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +313,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27BE84622D9D75BE00BF4564 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -252,6 +329,7 @@
 			files = (
 				2738FF322D90362F000F7A22 /* NetworkManager.swift in Sources */,
 				2738FF2F2D9035A6000F7A22 /* HomeViewController.swift in Sources */,
+				27BE845F2D9D6E1C00BF4564 /* UserDetailViewModel.swift in Sources */,
 				2738FF3B2D904DFF000F7A22 /* FollowButton.swift in Sources */,
 				2738FF442D904E95000F7A22 /* FollowingManager.swift in Sources */,
 				2738FF402D904E37000F7A22 /* FormatNumber.swift in Sources */,
@@ -261,13 +339,29 @@
 				2738FF212D90348F000F7A22 /* AppDelegate.swift in Sources */,
 				2738FF222D90348F000F7A22 /* SceneDelegate.swift in Sources */,
 				2738FF2D2D9035A0000F7A22 /* HomeViewModel.swift in Sources */,
+				27BE845D2D9D6E1500BF4564 /* UserDetailViewController.swift in Sources */,
 				2738FF382D904124000F7A22 /* HomeTableViewCell.swift in Sources */,
 				2738FF472D904EF5000F7A22 /* UIImage+Cache.swift in Sources */,
 				2738FF352D903640000F7A22 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27BE84602D9D75BE00BF4564 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27BE84692D9D75BE00BF4564 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2738FF012D90346B000F7A22 /* Pixel */;
+			targetProxy = 27BE84682D9D75BE00BF4564 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2738FF1E2D90348F000F7A22 /* LaunchScreen.storyboard */ = {
@@ -456,6 +550,42 @@
 			};
 			name = Release;
 		};
+		27BE846B2D9D75BE00BF4564 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DMS7H44E8B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lewishalliday.PixelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pixel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pixel";
+			};
+			name = Debug;
+		};
+		27BE846C2D9D75BE00BF4564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DMS7H44E8B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lewishalliday.PixelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pixel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pixel";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -473,6 +603,15 @@
 			buildConfigurations = (
 				2738FF162D90346C000F7A22 /* Debug */,
 				2738FF172D90346C000F7A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BE846A2D9D75BE00BF4564 /* Build configuration list for PBXNativeTarget "PixelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BE846B2D9D75BE00BF4564 /* Debug */,
+				27BE846C2D9D75BE00BF4564 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
